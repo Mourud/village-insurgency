@@ -7,6 +7,10 @@
   position: relative;
 }
 
+:hover{
+  cursor: default ;
+}
+
 .infobar {
   height: 5vh;
   width: 100vw;
@@ -85,3 +89,4 @@
   display: grid;
   place-items: center;
 }
+
