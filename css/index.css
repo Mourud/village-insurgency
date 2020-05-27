@@ -8,7 +8,7 @@
 }
 
 body {
-  background: url(/knight.jpg);
+  background: url(../assets/images/knight.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
