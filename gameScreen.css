@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Oswald, Arial, Helvetica, sans-serif;
+  color: #1d3557;
+  position: relative;
+  text-align: center;
+
+}
+
+.infobar{
+  height: 5vh;
+  width: 100vw;
+  background: #515052;
+}
+
+.gamebox {
+  height: 78vh;
+  width: 100vw;
+  background: #f1faee;
+
+}
+
+.controlbox {
+  height: 17vh;
+  width: 100vw;
+  background: #a8dadc;
+}
+
+.townOne {
+  background: #457b9d;
+  width: 10em;
+  height: 10em;
+  display: grid;
+  place-items: center;
+}
+
+.townTwo {
+  background: #e63946;
+  width: 10em;
+  height: 10em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+}
+
+.mine {
+  background: #f9dc5c;
+  width: 10em;
+  height: 10em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.farm {
+  background: #386641;
+  width: 10em;
+  height: 10em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}

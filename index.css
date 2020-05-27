@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Oswald, Arial, Helvetica, sans-serif;
+  color: #f1faee;
+
+}
+
+body {
+  background: url(/knight.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1D3557 ;
+}
