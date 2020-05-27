@@ -5,21 +5,36 @@
   font-family: Oswald, Arial, Helvetica, sans-serif;
   color: #1d3557;
   position: relative;
-  text-align: center;
-
 }
 
-.infobar{
+.infobar {
   height: 5vh;
   width: 100vw;
   background: #515052;
+  display: flex;
+}
+
+.infobar span {
+  color: white;
+  text-emphasis: bold;
+  margin-right: 1em;
+  
+  padding-top: 0.25em;
+}
+
+#turn-player-color {
+  margin-right: 0.25rem;
+  height: 100%;
+  width: 5vh;
+  background: #457b9d;
+  border: solid 2px #414042;
+  box-sizing: border-box;
 }
 
 .gamebox {
   height: 78vh;
   width: 100vw;
   background: #f1faee;
-
 }
 
 .controlbox {
