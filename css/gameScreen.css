@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Oswald, Arial, Helvetica, sans-serif;
-  color: #1d3557;
+  color: #162841;
   position: relative;
 }
 
@@ -27,12 +27,17 @@
 }
 
 #turn-player-color {
+  font-weight: lighter;
+  font-size: 0.5em;
+  text-align: center;
   margin-right: 0.25rem;
   height: 100%;
   width: 5vh;
   background: #457b9d;
   border: solid 2px #414042;
   box-sizing: border-box;
+  color:  #162841;;
+  
 }
 
 .gamebox {
