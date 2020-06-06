@@ -7,8 +7,8 @@
   position: relative;
 }
 
-:hover{
-  cursor: default ;
+:hover {
+  cursor: default;
 }
 
 .infobar {
@@ -22,7 +22,7 @@
   color: white;
   text-emphasis: bold;
   margin-right: 1em;
-  
+
   padding-top: 0.25em;
 }
 
@@ -36,8 +36,7 @@
   background: #457b9d;
   border: solid 2px #414042;
   box-sizing: border-box;
-  color:  #162841;;
-  
+  color: #162841;
 }
 
 .gamebox {
@@ -95,3 +94,14 @@
   place-items: center;
 }
 
+.button {
+  padding: 1em 2em;
+  margin-top: 0.25em;
+  background: #f1faee;
+  border: none;
+  border-radius: 5%;
+}
+
+button.button:hover{
+     background: #f1faee;
+}
