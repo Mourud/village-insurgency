@@ -119,7 +119,9 @@
   height: 17vh;
   width: 100vw;
   background: var(--game-blue);
-  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .button {
@@ -128,8 +130,17 @@
   background: #EA8C55;
   border: none;
   border-radius: 5%;
+  display: inline-block;
+  
 }
 
 button.button:hover {
   background: #79acad;
+}
+
+.vl {
+  display: inline-block;
+  position: relative;
+  border-left: 6px solid green;
+  height: 100%;
 }
