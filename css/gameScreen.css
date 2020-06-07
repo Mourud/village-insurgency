@@ -34,7 +34,6 @@
   color: var(--game-white);
   font-weight: bold;
   margin-right: 1em;
-  
 }
 
 #turn-player-color {
@@ -126,13 +125,13 @@
 }
 
 .button {
-  padding: 1em 2em;
-  margin-top: 0.25em;
-  background: #EA8C55;
-  border: none;
-  border-radius: 5%;
-  display: inline-block;
-  
+  padding-left: 5vw;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  padding-right: 5vw;
+  background: #ea8c55;
+  border: 2px solid #d17c4b;
+
 }
 
 button.button:hover {
@@ -141,6 +140,28 @@ button.button:hover {
 
 .vl {
   display: inline-block;
-  border-left: 6px solid green;
+  border: 6px solid black;
   height: 100%;
+}
+
+.buttonControls {
+  align-items: top;
+}
+
+.buttonControls {
+  flex-grow: 1;
+  display: flex;
+}
+
+.infobox {
+  background: rgb(209, 183, 149);
+  height: 100%;
+
+  border-bottom: 2vh;
+  border-top: 2vh;
+  border-left: 1vw;
+  border-right: 1vw;
+  border-color: var(--game-blue);
+  border-style: solid;
+  flex-grow: 1;
 }
