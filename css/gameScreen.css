@@ -1,9 +1,20 @@
+:root {
+  --player-one-color: #457b9d;
+  --player-two-color: #e63946;
+
+  --gold-color: #f9dc5c;
+  --farm-color: #386641;
+
+  --game-white: #f1faee;
+  --game-dark: #515052;
+  --game-blue: #162841;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Oswald, Arial, Helvetica, sans-serif;
-  color: #162841;
   position: relative;
 }
 
@@ -14,12 +25,12 @@
 .infobar {
   height: 5vh;
   width: 100vw;
-  background: #515052;
+  background: var(--game-dark);
   display: flex;
 }
 
 .infobar span {
-  color: white;
+  color: var(--game-white);
   text-emphasis: bold;
   margin-right: 1em;
 
@@ -33,7 +44,7 @@
   margin-right: 0.25rem;
   height: 100%;
   width: 5vh;
-  background: #457b9d;
+  background: var(--player-one-color);
   border: solid 2px #414042;
   box-sizing: border-box;
   color: #162841;
@@ -45,22 +56,20 @@
   background: #f1faee;
 }
 
-.controlbox {
-  height: 17vh;
-  width: 100vw;
-  background: #a8dadc;
-}
-
 .townOne {
-  background: #457b9d;
+  background: var(--player-one-color);
   width: 10em;
   height: 10em;
   display: grid;
   place-items: center;
 }
 
+.townOne:hover {
+  background: #386480;
+}
+
 .townTwo {
-  background: #e63946;
+  background: var(--player-two-color);
   width: 10em;
   height: 10em;
   position: absolute;
@@ -70,8 +79,12 @@
   place-items: center;
 }
 
+.townTwo:hover {
+  background: #b62e39;
+}
+
 .mine {
-  background: #f9dc5c;
+  background: var(--gold-color);
   width: 10em;
   height: 10em;
   position: absolute;
@@ -82,8 +95,12 @@
   place-items: center;
 }
 
+.mine:hover {
+  background: #cfb74d;
+}
+
 .farm {
-  background: #386641;
+  background: var(--farm-color);
   width: 10em;
   height: 10em;
   position: absolute;
@@ -94,14 +111,25 @@
   place-items: center;
 }
 
+.farm:hover {
+  background: #28472d;
+}
+
+.controlbox {
+  height: 17vh;
+  width: 100vw;
+  background: var(--game-blue);
+  display: inline-block;
+}
+
 .button {
   padding: 1em 2em;
   margin-top: 0.25em;
-  background: #f1faee;
+  background: #EA8C55;
   border: none;
   border-radius: 5%;
 }
 
-button.button:hover{
-     background: #f1faee;
+button.button:hover {
+  background: #79acad;
 }
