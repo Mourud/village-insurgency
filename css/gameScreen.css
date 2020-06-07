@@ -27,20 +27,21 @@
   width: 100vw;
   background: var(--game-dark);
   display: flex;
+  align-items: center;
 }
 
 .infobar span {
   color: var(--game-white);
-  text-emphasis: bold;
+  font-weight: bold;
   margin-right: 1em;
-
-  padding-top: 0.25em;
+  
 }
 
 #turn-player-color {
-  font-weight: lighter;
-  font-size: 0.5em;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75em;
   margin-right: 0.25rem;
   height: 100%;
   width: 5vh;
@@ -140,7 +141,6 @@ button.button:hover {
 
 .vl {
   display: inline-block;
-  position: relative;
   border-left: 6px solid green;
   height: 100%;
 }
