@@ -22,7 +22,17 @@
   cursor: default;
 }
 
+.grid-container{
+  display: grid;
+  grid-template-areas: 
+    "infobar"
+    "gamescreen"
+    "controlbox"
+  ;
+}
+
 .infobar {
+  grid-area: infobar;
   height: 5vh;
   width: 100vw;
   background: var(--game-dark);
