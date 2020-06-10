@@ -49,6 +49,7 @@
 
 .icons li{
   display: inline;
+  margin-left: 5px;
 }
 
 .icons li img:hover {
@@ -141,7 +142,7 @@
   justify-content: center;
   align-items: center;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-columns: 2fr 1fr;
 }
 
 .button {
@@ -157,12 +158,6 @@
 button.button:hover {
   background: #d17c4b;
 }
-
-/* .vl {
-  display: inline-block;
-  border: 6px solid black;
-  height: 100%;
-} */
 
 .buttonControls {
   align-items: top;
