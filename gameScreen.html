@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/gameScreen.css">
+  <script defer src="js/app.js"></script>
   <title>Village Insurgency | Play</title>
 </head>
 
@@ -12,10 +13,10 @@
       <div class="navbar">
         <div class="info">
         <span id="turn-player-color">TURN</span>
-        <span>Population: 0</span>
-        <span>Food: 0</span>
-        <span>Gold: 0</span>
-        <span>Moves Left: 0</span>
+        <span >Population: <span id="pop">0</span></span>
+        <span >Food: <span id="food">0</span></span>
+        <span >Gold: <span id="gold">0</span></span>
+        <span >Moves Left: <span id="moves">10</span></span>
         </div>
         <div class="icons">
           <ul>
@@ -33,7 +34,6 @@
       </div>
       <div class="controlbox">
         <div class="infobox"></div>
-        <!-- <div class="vl"></div> -->
         <div class="buttonControls">
           <button class="button" id="makeVil">Make Villager</button>
           <button class="button" id="makeSold">Make Soldier</button>
