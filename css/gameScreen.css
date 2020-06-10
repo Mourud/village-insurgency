@@ -22,28 +22,37 @@
   cursor: default;
 }
 
-.grid-container{
-  display: grid;
-  grid-template-areas: 
-    "infobar"
-    "gamescreen"
-    "controlbox"
-  ;
-}
-
-.infobar {
-  grid-area: infobar;
+.navbar {
   height: 5vh;
   width: 100vw;
   background: var(--game-dark);
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.infobar span {
+.navbar .info{
+  display: flex;
+  align-items: center; 
+
+}
+
+.info span {
   color: var(--game-white);
   font-weight: bold;
   margin-right: 1em;
+}
+
+.icons {
+  align-self: center;
+  justify-self: end;
+}
+
+.icons li{
+  display: inline;
+}
+
+.icons li img:hover {
+  cursor: pointer;
 }
 
 #turn-player-color {

@@ -9,13 +9,21 @@
 
 
 <body>
-  <div class="grid-container">
-      <div class="infobar">
+      <div class="navbar">
+        <div class="info">
         <span id="turn-player-color">TURN</span>
         <span>Population: 0</span>
         <span>Food: 0</span>
         <span>Gold: 0</span>
         <span>Moves Left: 0</span>
+        </div>
+        <div class="icons">
+          <ul>
+            <li></a><img src="assets/icons/save.svg" alt="Save"></li>
+            <li><img src="assets/icons/load.svg" alt="Load"></li>
+            <li><a href="index.html"><img src="assets/icons/exit.svg" alt="Close"></a></li>
+          </ul>
+        </div>
       </div>
       <div class="gamebox">
         <div class="townOne">Town House</div>
@@ -27,13 +35,11 @@
         <div class="infobox"></div>
         <div class="vl"></div>
         <div class="buttonControls">
-          <button class="button">Make Villager</button>
-          <button class="button">Make Soilder</button>
-          <button class="button">Skip Turn</button>
+          <button class="button" id="makeVil">Make Villager</button>
+          <button class="button" id="makeSold">Make Soldier</button>
+          <button class="button" id="skip">Skip Turn</button>
           </ul>
         </div>
-      
       </div>
-  </div>
 </body>
 </html>
