@@ -1,0 +1,6 @@
+class Villager{
+
+  constructor(){
+  
+  }
+}
