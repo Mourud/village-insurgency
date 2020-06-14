@@ -1,5 +1,5 @@
-class Person{
-  constructor(params) {
+class Person{  
+  constructor() {
     
   }
 }

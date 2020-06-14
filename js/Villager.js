@@ -1,4 +1,4 @@
-class Villager{
+class Villager extends Person{
 
   constructor(){
   

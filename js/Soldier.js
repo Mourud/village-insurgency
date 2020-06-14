@@ -1,4 +1,4 @@
-class Soldier{
+class Soldier extends Person{
   constructor() {
     
   }
