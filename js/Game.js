@@ -1,3 +1,5 @@
+// load, update, inputs, render
+main();
 let navbar = document.querySelector(".navbar");
 let buttonControls = document.querySelector(".buttonControls");
 let pop = document.querySelector("#pop");
@@ -11,22 +13,59 @@ let counter = 0;
 navbar.addEventListener("click", managePersitance, false);
 buttonControls.addEventListener("click", handleButtons, false);
 
+class Player {
+  constructor(playerColor, moves) {
+    this.playerColor = playerColor;
+    this.moves = moves;
+    this.registry = [];
+  }
+
+  makeVillager() {
+    this.registry.push(new Villager());
+  }
+}
+
+class Villager {
+  constructor() {
+    this.health = 50;
+  }
+}
+
+const PLAYERS = [new Player("blue", 2, 3), new Player("red", 2, 3)];
+
+function main() {
+  counter = 0;
+  while (true) {
+    counter++;
+    alert(counter);
+    //playerNum = counter % 2;
+    update(PLAYERS[0]);
+  }
+}
+
+function update(player) {
+  setInformation(player);
+  render(player);
+}
+
+function setInformation(player) {
+  pop.innerHTML = player.registry.lenght();
+}
+
+function render(player) {}
+
 function managePersitance(e) {}
 
 function handleButtons(e) {
   if (e.target !== e.currentTarget) {
     var clickedItem = e.target.id;
-    if (!isTurnOver()) {
-      if (clickedItem === "makeVil") {
-        addPop()
-      } else if (clickedItem === "makeSold") {
-        addPop();
-      } else if (clickedItem === "skip") {
-        changeTurn()
-      }
-    } else {
+    playerNum = counter % 2;
+    if (clickedItem === "makeVil") {
+      PLAYERS[playerNum].makeVillager();
+    } else if (clickedItem === "makeSold") {
+      addPop();
+    } else if (clickedItem === "skip") {
       changeTurn();
-      
     }
   }
   e.stopPropagation;
@@ -62,6 +101,7 @@ function addPop() {
 }
 
 function isTurnOver() {
-  return(parseInt(moves.innerHTML)< 1)
+  return parseInt(moves.innerHTML) < 1;
 }
 
+setUp();
