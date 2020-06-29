@@ -1,5 +1,0 @@
-class Goldmine{
-  constructor(){
-  
-  }
-}

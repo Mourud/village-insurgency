@@ -1,5 +1,0 @@
-class Farm{
-  constructor(params) {
-    
-  }
-}
