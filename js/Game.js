@@ -1,5 +1,6 @@
 // load, update, inputs, render
-main();
+import Player from "./Player.js";
+// main();
 let navbar = document.querySelector(".navbar");
 let buttonControls = document.querySelector(".buttonControls");
 let pop = document.querySelector("#pop");
@@ -12,24 +13,6 @@ let counter = 0;
 
 navbar.addEventListener("click", managePersitance, false);
 buttonControls.addEventListener("click", handleButtons, false);
-
-class Player {
-  constructor(playerColor, moves) {
-    this.playerColor = playerColor;
-    this.moves = moves;
-    this.registry = [];
-  }
-
-  makeVillager() {
-    this.registry.push(new Villager());
-  }
-}
-
-class Villager {
-  constructor() {
-    this.health = 50;
-  }
-}
 
 const PLAYERS = [new Player("blue", 2, 3), new Player("red", 2, 3)];
 
