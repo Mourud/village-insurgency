@@ -4,17 +4,13 @@ import Player from './Player.js'
 */
 
 
-
-
-
-
-
-
+//Game Constants
 const PLAYER_ONE_COLOR = '#457b9d';
 const PLAYER_TWO_COLOR = '#e63946';
 const INITIAL_POPULATION = 5;
 const INITIAL_FOOD = 100;
 const INITIAL_GOLD = 100;
+
 // initializing a list of players
 const PLAYERS = [ new Player(PLAYER_ONE_COLOR, INITIAL_POPULATION, INITIAL_FOOD,INITIAL_GOLD),
                   new Player(PLAYER_TWO_COLOR, INITIAL_POPULATION, INITIAL_FOOD,INITIAL_GOLD)];
@@ -50,18 +46,21 @@ function setUp() {
   movesElement.innerHTML = moves;
 }
 
+let buttonControls = document.querySelector(".buttonControls");
 buttonControls.addEventListener("click", handleButtons, false);
 
 function handleButtons(e) {
   if (e.target !== e.currentTarget) {
     var clickedItem = e.target.id;
-    playerNum = counter % 2;
     if (clickedItem === "makeVil") {
-      PLAYERS[playerNum].makeVillager();
+      PLAYERS[g_turn].createVillager();
+      setUp();
     } else if (clickedItem === "makeSold") {
-      addPop();
+      PLAYERS[g_turn].createSoldier();
+      console.log(PLAYERS[0].registry.length);
+      setUp();
     } else if (clickedItem === "skip") {
-      changeTurn();
+      return;
     }
   }
   e.stopPropagation;
