@@ -1,12 +1,16 @@
 import Player from './Player.js'
-
-
-const PLAYER_ONE_COLOR = '#457b9d'
-const PLAYER_TWO_COLOR =  '#e63946'
+/*
+  This file is the entry point of the game and it handles all global Game related tasks
+*/
+const PLAYER_ONE_COLOR = '#457b9d';
+const PLAYER_TWO_COLOR = '#e63946';
+const INITIAL_POPULATION = 5;
 // initializing a list of players
-const PLAYERS = [new Player(PLAYER_ONE_COLOR), new Player(PLAYER_TWO_COLOR)];
+const PLAYERS = [ new Player(PLAYER_ONE_COLOR, INITIAL_POPULATION),
+                  new Player(PLAYER_TWO_COLOR, INITIAL_POPULATION)];
 
-/*global turn value:
+/*
+global turn value:
   0     blue
   1     red
 */
