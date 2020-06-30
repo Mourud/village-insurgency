@@ -1,4 +1,6 @@
 import Player from "./Player.js";
+//TODO Switch Player turns and update moves accordingly
+
 /*
   This file is the entry point of the game and it handles all global Game related tasks
 */
