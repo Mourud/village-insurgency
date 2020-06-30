@@ -1,48 +1,48 @@
-import Player from './Player.js'
+import Player from "./Player.js";
 /*
   This file is the entry point of the game and it handles all global Game related tasks
 */
 
-
 //Game Constants
-const PLAYER_ONE_COLOR = '#457b9d';
-const PLAYER_TWO_COLOR = '#e63946';
+const PLAYER_ONE_COLOR = "#457b9d";
+const PLAYER_TWO_COLOR = "#e63946";
 const INITIAL_POPULATION = 5;
 const INITIAL_FOOD = 100;
 const INITIAL_GOLD = 100;
 
 // initializing a list of players
-const PLAYERS = [ new Player(PLAYER_ONE_COLOR, INITIAL_POPULATION, INITIAL_FOOD,INITIAL_GOLD),
-                  new Player(PLAYER_TWO_COLOR, INITIAL_POPULATION, INITIAL_FOOD,INITIAL_GOLD)];
+const PLAYERS = [
+  new Player(PLAYER_ONE_COLOR, INITIAL_POPULATION, INITIAL_FOOD, INITIAL_GOLD),
+  new Player(PLAYER_TWO_COLOR, INITIAL_POPULATION, INITIAL_FOOD, INITIAL_GOLD),
+];
 
 /*
 global turn value:
   0     blue
   1     red
 */
-let g_turn = 0
-  ;
+let g_turn = 0;
 // function sets up values on the top bar before entering players turn
 function setUp() {
   //set player color on the Turn box
   let playerColor = PLAYERS[g_turn].color;
-  let colorBox = document.querySelector('#turn-player-color');
+  let colorBox = document.querySelector("#turn-player-color");
   colorBox.style.background = playerColor;
   //set population on UI
   let population = PLAYERS[g_turn].registry.length;
-  let popElement = document.querySelector('#pop');
+  let popElement = document.querySelector("#pop");
   popElement.innerHTML = population;
   //set Food
   let foodAmount = PLAYERS[g_turn].foodAmount;
-  let foodElement = document.querySelector('#food');
+  let foodElement = document.querySelector("#food");
   foodElement.innerHTML = foodAmount;
   //set Gold
   let goldAmount = PLAYERS[g_turn].goldAmount;
-  let goldElement = document.querySelector('#gold');
+  let goldElement = document.querySelector("#gold");
   goldElement.innerHTML = goldAmount;
   //set moves
-  let moves = PLAYERS[g_turn].registry.length;
-  let movesElement = document.querySelector('#moves');
+  let moves = PLAYERS[g_turn].movesLeft;
+  let movesElement = document.querySelector("#moves");
   movesElement.innerHTML = moves;
 }
 

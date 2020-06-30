@@ -14,11 +14,13 @@ export default class Player {
     }
     this.foodAmount = food;
     this.goldAmount = gold;
+    this.movesLeft = this.registry.length;
   }
 
   createVillager() {
     if (this.foodAmount >= 10) {
       // TODO: Change costs to constants in game. (MAKE CONSTANTS FILE)
+      this.movesLeft--;
       this.foodAmount -= 10;
       this.registry.push(new Villager(this.registry.length));
     } else {
@@ -29,6 +31,7 @@ export default class Player {
   createSoldier() {
     if (this.foodAmount >= 10) {
       if (this.goldAmount >= 10) {
+        this.movesLeft--;
         this.foodAmount -= 10;
         this.goldAmount -= 10;
         this.registry.push(new Soldier(this.registry.length));
