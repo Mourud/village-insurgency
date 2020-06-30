@@ -8,7 +8,11 @@ export default class Player {
   constructor(color, population, food, gold) {
     this.color = color;
     this.registry = [];
-    this.foodAmount = 100000; //TODO: SIMPLE PATCH. FIX TO BETTER SOLUTION
+    //---------------------------
+    this.movesLeft = 100000;
+    this.foodAmount = 100000;
+    //------------------------------
+    //TODO: SIMPLE PATCH. FIX TO BETTER SOLUTION
     for (let i = 0; i < population; i++) {
       this.createVillager();
     }
@@ -18,29 +22,37 @@ export default class Player {
   }
 
   createVillager() {
-    if (this.foodAmount >= 10) {
-      // TODO: Change costs to constants in game. (MAKE CONSTANTS FILE)
-      this.movesLeft--;
-      this.foodAmount -= 10;
-      this.registry.push(new Villager(this.registry.length));
+    if (this.movesLeft) {
+      if (this.foodAmount >= 10) {
+        // TODO: Change costs to constants in game. (MAKE CONSTANTS FILE)
+        this.movesLeft--;
+        this.foodAmount -= 10;
+        this.registry.push(new Villager(this.registry.length));
+      } else {
+        alert("Insufficient Food");
+      }
     } else {
-      alert("Insufficient Food");
+      alert('You have no moves remaining please End Turn')
     }
   }
 
   createSoldier() {
-    if (this.foodAmount >= 10) {
-      if (this.goldAmount >= 10) {
-        this.movesLeft--;
-        this.foodAmount -= 10;
-        this.goldAmount -= 10;
-        this.registry.push(new Soldier(this.registry.length));
+      if (this.movesLeft) {
+        if (this.foodAmount >= 10) {
+          if (this.goldAmount >= 10) {
+            this.movesLeft--;
+            this.foodAmount -= 10;
+            this.goldAmount -= 10;
+            this.registry.push(new Soldier(this.registry.length));
+          } else {
+            alert("Insufficient Gold");
+            return;
+          }
+        } else {
+          alert("Insufficient Food");
+        }
       } else {
-        alert("Insufficient Gold");
-        return;
+        alert('You have no moves remaining please End Turn')
       }
-    } else {
-      alert("Insufficient Food");
-    }
   }
 }

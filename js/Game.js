@@ -1,6 +1,4 @@
 import Player from "./Player.js";
-//TODO Switch Player turns and update moves accordingly
-
 /*
   This file is the entry point of the game and it handles all global Game related tasks
 */
@@ -25,7 +23,7 @@ global turn value:
 */
 let g_turn = 0;
 // function sets up values on the top bar before entering players turn
-function setUp() {
+function refreshNavBar() {
   //set player color on the Turn box
   let playerColor = PLAYERS[g_turn].color;
   let colorBox = document.querySelector("#turn-player-color");
@@ -56,16 +54,16 @@ function handleButtons(e) {
     var clickedItem = e.target.id;
     if (clickedItem === "makeVil") {
       PLAYERS[g_turn].createVillager();
-      setUp();
     } else if (clickedItem === "makeSold") {
       PLAYERS[g_turn].createSoldier();
       console.log(PLAYERS[0].registry.length);
-      setUp();
-    } else if (clickedItem === "skip") {
-      return;
+    } else if (clickedItem === "end") {
+      //this adds 1 to the turn, but since we only use it to access the players in the array, we only need it to be 0/1
+      g_turn = (g_turn + 1) % 2;
     }
+    refreshNavBar();
   }
   e.stopPropagation;
 }
 
-setUp();
+refreshNavBar();
