@@ -1,90 +1,69 @@
-// load, update, inputs, render
 import Player from "./Player.js";
-// main();
-let navbar = document.querySelector(".navbar");
+/*
+  This file is the entry point of the game and it handles all global Game related tasks
+*/
+
+//Game Constants
+const PLAYER_ONE_COLOR = "#457b9d";
+const PLAYER_TWO_COLOR = "#e63946";
+const INITIAL_POPULATION = 5;
+const INITIAL_FOOD = 100;
+const INITIAL_GOLD = 100;
+
+// initializing a list of players
+const PLAYERS = [
+  new Player(PLAYER_ONE_COLOR, INITIAL_POPULATION, INITIAL_FOOD, INITIAL_GOLD),
+  new Player(PLAYER_TWO_COLOR, INITIAL_POPULATION, INITIAL_FOOD, INITIAL_GOLD),
+];
+
+/*
+global turn value:
+  0     blue
+  1     red
+*/
+let g_turn = 0;
+// function sets up values on the top bar before entering players turn
+function refreshNavBar() {
+  //set player color on the Turn box
+  let playerColor = PLAYERS[g_turn].color;
+  let colorBox = document.querySelector("#turn-player-color");
+  colorBox.style.background = playerColor;
+  //set population on UI
+  let population = PLAYERS[g_turn].registry.length;
+  let popElement = document.querySelector("#pop");
+  popElement.innerHTML = population;
+  //set Food
+  let foodAmount = PLAYERS[g_turn].foodAmount;
+  let foodElement = document.querySelector("#food");
+  foodElement.innerHTML = foodAmount;
+  //set Gold
+  let goldAmount = PLAYERS[g_turn].goldAmount;
+  let goldElement = document.querySelector("#gold");
+  goldElement.innerHTML = goldAmount;
+  //set moves
+  let moves = PLAYERS[g_turn].movesLeft;
+  let movesElement = document.querySelector("#moves");
+  movesElement.innerHTML = moves;
+}
+
 let buttonControls = document.querySelector(".buttonControls");
-let pop = document.querySelector("#pop");
-let food = document.querySelector("#food");
-let gold = document.querySelector("#gold");
-let moves = document.querySelector("#moves");
-let turnBoxColor = document.querySelector("#turn-player-color");
-
-let counter = 0;
-
-navbar.addEventListener("click", managePersitance, false);
 buttonControls.addEventListener("click", handleButtons, false);
-
-const PLAYERS = [new Player("blue", 2, 3), new Player("red", 2, 3)];
-
-function main() {
-  counter = 0;
-  while (true) {
-    counter++;
-    alert(counter);
-    //playerNum = counter % 2;
-    update(PLAYERS[0]);
-  }
-}
-
-function update(player) {
-  setInformation(player);
-  render(player);
-}
-
-function setInformation(player) {
-  pop.innerHTML = player.registry.lenght();
-}
-
-function render(player) {}
-
-function managePersitance(e) {}
 
 function handleButtons(e) {
   if (e.target !== e.currentTarget) {
     var clickedItem = e.target.id;
-    playerNum = counter % 2;
     if (clickedItem === "makeVil") {
-      PLAYERS[playerNum].makeVillager();
+      PLAYERS[g_turn].createVillager();
     } else if (clickedItem === "makeSold") {
-      addPop();
-    } else if (clickedItem === "skip") {
-      changeTurn();
+      PLAYERS[g_turn].createSoldier();
+      console.log(PLAYERS[0].registry.length);
+    } else if (clickedItem === "end") {
+      //this adds 1 to the turn, but since we only use it to access the players in the array, we only need it to be 0/1
+      g_turn = (g_turn + 1) % 2;
     }
+    refreshNavBar();
   }
   e.stopPropagation;
 }
 
-function changeTurn() {
-  changeColor();
-  moves.innerHTML = 10;
-}
-
-function changeColor() {
-  counter++;
-  let turnNumber;
-  turnNumber = counter % 2;
-  console.log(turnNumber);
-  switch (turnNumber) {
-    case 0:
-      turnBoxColor.style.background = "#457b9d";
-      break;
-    case 1:
-      turnBoxColor.style.background = "#e63946";
-      break;
-  }
-}
-
-function addPop() {
-  newpop = parseInt(pop.innerHTML);
-  newpop++;
-  pop.innerHTML = newpop;
-  newmoves = parseInt(moves.innerHTML);
-  newmoves--;
-  moves.innerHTML = newmoves;
-}
-
-function isTurnOver() {
-  return parseInt(moves.innerHTML) < 1;
-}
-
-setUp();
+refreshNavBar();
