@@ -4,8 +4,10 @@ import Villager from './Villager.js'
 */
 export default class Player{
 
-  constructor(color, population) {
+  constructor(color, population, food, gold) {
     this.color = color;
+    this.foodAmount = food;
+    this.goldAmount = gold;
     this.registry = [];
     for (let i = 0; i < population; i++) {
       this.createVillager();
