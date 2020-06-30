@@ -2,6 +2,14 @@ import Player from './Player.js'
 /*
   This file is the entry point of the game and it handles all global Game related tasks
 */
+
+
+
+
+
+
+
+
 const PLAYER_ONE_COLOR = '#457b9d';
 const PLAYER_TWO_COLOR = '#e63946';
 const INITIAL_POPULATION = 5;
@@ -42,6 +50,21 @@ function setUp() {
   movesElement.innerHTML = moves;
 }
 
+buttonControls.addEventListener("click", handleButtons, false);
 
+function handleButtons(e) {
+  if (e.target !== e.currentTarget) {
+    var clickedItem = e.target.id;
+    playerNum = counter % 2;
+    if (clickedItem === "makeVil") {
+      PLAYERS[playerNum].makeVillager();
+    } else if (clickedItem === "makeSold") {
+      addPop();
+    } else if (clickedItem === "skip") {
+      changeTurn();
+    }
+  }
+  e.stopPropagation;
+}
 
 setUp();
