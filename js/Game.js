@@ -1,11 +1,11 @@
 import Player from "./Player.js";
+import * as GameConstants from './GameConstants.js'
 /*
   This file is the entry point of the game and it handles all global Game related tasks
 */
-
 //Game Constants
-const PLAYER_ONE_COLOR = "#457b9d";
-const PLAYER_TWO_COLOR = "#e63946";
+const PLAYER_ONE_COLOR = GameConstants.PLAYER_ONE_COLOR;
+const PLAYER_TWO_COLOR = GameConstants.PLAYER_TWO_COLOR;
 const INITIAL_POPULATION = 5;
 const INITIAL_FOOD = 100;
 const INITIAL_GOLD = 100;
