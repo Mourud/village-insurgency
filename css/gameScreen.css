@@ -76,6 +76,12 @@
   background: #f1faee;
 }
 
+canvas{
+  height: 78vh;
+  width: 100vw;
+  background-color: #f1faee;
+}
+
 .townOne {
   background: var(--player-one-color);
   width: 10em;
