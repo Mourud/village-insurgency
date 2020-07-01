@@ -23,8 +23,7 @@ global turn value:
 */
 let g_turn = 0;
 // function sets up values on the top bar before entering players turn
-function refreshNavBar() {
-  //set player color on the Turn box
+function turnSetUp() {
   let playerColor = PLAYERS[g_turn].color;
   let colorBox = document.querySelector("#turn-player-color");
   colorBox.style.background = playerColor;
@@ -32,15 +31,35 @@ function refreshNavBar() {
   let population = PLAYERS[g_turn].registry.length;
   let popElement = document.querySelector("#pop");
   popElement.innerHTML = population;
-  //set Food
+  //set Food on UI
   let foodAmount = PLAYERS[g_turn].foodAmount;
   let foodElement = document.querySelector("#food");
   foodElement.innerHTML = foodAmount;
-  //set Gold
+  //set Gold on UI
   let goldAmount = PLAYERS[g_turn].goldAmount;
   let goldElement = document.querySelector("#gold");
   goldElement.innerHTML = goldAmount;
   //set moves
+  // the number of moves a player has is equal to the their population at the start of the turn
+  PLAYERS[g_turn].movesLeft = PLAYERS[g_turn].registry.length;
+  let moves = PLAYERS[g_turn].movesLeft;
+  let movesElement = document.querySelector("#moves");
+  movesElement.innerHTML = moves;
+}
+function refreshNavBar() {
+  //set population on UI
+  let population = PLAYERS[g_turn].registry.length;
+  let popElement = document.querySelector("#pop");
+  popElement.innerHTML = population;
+  //set Food on UI
+  let foodAmount = PLAYERS[g_turn].foodAmount;
+  let foodElement = document.querySelector("#food");
+  foodElement.innerHTML = foodAmount;
+  //set Gold on UI
+  let goldAmount = PLAYERS[g_turn].goldAmount;
+  let goldElement = document.querySelector("#gold");
+  goldElement.innerHTML = goldAmount;
+  //set moves on UI
   let moves = PLAYERS[g_turn].movesLeft;
   let movesElement = document.querySelector("#moves");
   movesElement.innerHTML = moves;
@@ -54,16 +73,18 @@ function handleButtons(e) {
     var clickedItem = e.target.id;
     if (clickedItem === "makeVil") {
       PLAYERS[g_turn].createVillager();
+      refreshNavBar();
     } else if (clickedItem === "makeSold") {
       PLAYERS[g_turn].createSoldier();
+      refreshNavBar();
       console.log(PLAYERS[0].registry.length);
     } else if (clickedItem === "end") {
       //this adds 1 to the turn, but since we only use it to access the players in the array, we only need it to be 0/1
       g_turn = (g_turn + 1) % 2;
+      turnSetUp();
     }
-    refreshNavBar();
   }
   e.stopPropagation;
 }
 
-refreshNavBar();
+turnSetUp();
