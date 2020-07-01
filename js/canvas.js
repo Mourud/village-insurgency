@@ -42,7 +42,7 @@ const FARM_TEXT_Y = FARM_POSITION_Y + FARM_HEIGHT / 2 + 20;
 canvas.height = GAMEBOX_HEIGHT;
 canvas.width = GAMEBOX_WIDTH;
 
-function drawObject(name, color, x, y, width, height, text_x, text_y) {
+export function drawObject(name, color, x, y, width, height, text_x, text_y) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, width, height);
   ctx.fillStyle = "black";

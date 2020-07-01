@@ -6,6 +6,8 @@ const TH_LENGHT = GameConstants.TOWNHALL_LENGHT;
 const SPAWN_FACTOR_X = 500;
 const SPAWN_FACTOR_Y = 250;
 
+const PLAYER_ONE_COLOR = GameConstants.PLAYER_ONE_COLOR;
+
 const P2_TH_POS = {
   x: GameConstants.P2_TOWNHALL_POSITION_X,
   y: GameConstants.P2_TOWNHALL_POSITION_Y,
@@ -68,7 +70,7 @@ export default class Player {
 
   findPosition() {
     let x, y;
-    if (this.color === "blue") {
+    if (this.color === PLAYER_ONE_COLOR) {
       x = Math.floor(Math.random() * SPAWN_FACTOR_X + TH_LENGHT);
       y = Math.floor(Math.random() * SPAWN_FACTOR_Y + TH_LENGHT);
     } else {

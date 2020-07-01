@@ -1,5 +1,6 @@
 import Player from "./Player.js";
-import * as GameConstants from './GameConstants.js'
+import * as GameConstants from "./GameConstants.js";
+import { drawObject } from "./canvas.js";
 /*
   This file is the entry point of the game and it handles all global Game related tasks
 */
@@ -45,6 +46,8 @@ function turnSetUp() {
   let moves = PLAYERS[g_turn].movesLeft;
   let movesElement = document.querySelector("#moves");
   movesElement.innerHTML = moves;
+  render(PLAYERS[g_turn]);
+  render(PLAYERS[g_turn + 1]);
 }
 function refreshNavBar() {
   //set population on UI
@@ -63,8 +66,23 @@ function refreshNavBar() {
   let moves = PLAYERS[g_turn].movesLeft;
   let movesElement = document.querySelector("#moves");
   movesElement.innerHTML = moves;
+  render(PLAYERS[g_turn]);
 }
 
+function render(player) {
+  player.registry.forEach((person) => {
+    drawObject(
+      "",
+      player.color,
+      person.position.x,
+      person.position.y,
+      20,
+      20,
+      0,
+      0
+    );
+  });
+}
 let buttonControls = document.querySelector(".buttonControls");
 buttonControls.addEventListener("click", handleButtons, false);
 
