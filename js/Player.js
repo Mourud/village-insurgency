@@ -19,13 +19,9 @@ export default class Player {
   constructor(color, population, food, gold) {
     this.color = color;
     this.registry = [];
-    //---------------------------
-    this.movesLeft = 100000;
-    this.foodAmount = 100000;
-    //------------------------------
-    //TODO: SIMPLE PATCH. FIX TO BETTER SOLUTION
     for (let i = 0; i < population; i++) {
-      this.createVillager();
+      let position = this.findPosition();
+      this.registry.push(new Villager(this.registry.length, position));
     }
     this.foodAmount = food;
     this.goldAmount = gold;
