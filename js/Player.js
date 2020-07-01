@@ -8,6 +8,9 @@ const SPAWN_FACTOR_Y = 250;
 
 const PLAYER_ONE_COLOR = GameConstants.PLAYER_ONE_COLOR;
 
+const PERSON_COST = GameConstants.PERSON_COST;
+
+
 const P2_TH_POS = {
   x: GameConstants.P2_TOWNHALL_POSITION_X,
   y: GameConstants.P2_TOWNHALL_POSITION_Y,
@@ -30,10 +33,9 @@ export default class Player {
 
   createVillager() {
     if (this.movesLeft) {
-      if (this.foodAmount >= 10) {
-        // TODO: Change costs to constants in game. (MAKE CONSTANTS FILE)
+      if (this.foodAmount >= PERSON_COST) {
         this.movesLeft--;
-        this.foodAmount -= 10;
+        this.foodAmount -= PERSON_COST;
         let position = this.findPosition();
         this.registry.push(new Villager(this.registry.length, position));
       } else {
@@ -46,11 +48,11 @@ export default class Player {
 
   createSoldier() {
     if (this.movesLeft) {
-      if (this.foodAmount >= 10) {
-        if (this.goldAmount >= 10) {
+      if (this.foodAmount >= PERSON_COST) {
+        if (this.goldAmount >= PERSON_COST) {
           this.movesLeft--;
-          this.foodAmount -= 10;
-          this.goldAmount -= 10;
+          this.foodAmount -= PERSON_COST;
+          this.goldAmount -= PERSON_COST;
           let position = this.findPosition();
           this.registry.push(new Soldier(this.registry.length,position));
         } else {

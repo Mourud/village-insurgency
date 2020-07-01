@@ -39,3 +39,6 @@ export const FARM_POSITION_X = 0;
 export const FARM_POSITION_Y = GAMEBOX_HEIGHT - FARM_HEIGHT;
 export const FARM_TEXT_X = FARM_WIDTH / 2 - 55;
 export const FARM_TEXT_Y = FARM_POSITION_Y + FARM_HEIGHT / 2 + 20;
+
+//PERSON CONST
+export const PERSON_COST = 10;
