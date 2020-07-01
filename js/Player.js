@@ -55,7 +55,8 @@ export default class Player {
           this.movesLeft--;
           this.foodAmount -= 10;
           this.goldAmount -= 10;
-          this.registry.push(new Soldier(this.registry.length));
+          let position = this.findPosition();
+          this.registry.push(new Soldier(this.registry.length,position));
         } else {
           alert("Insufficient Gold");
           return;
