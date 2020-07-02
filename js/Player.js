@@ -1,5 +1,5 @@
 import Villager from "./Villager.js";
-import Soldier from "./Villager.js";
+import Soldier from "./Soldier.js";
 import * as GameConstants from "./GameConstants.js";
 
 const TH_LENGHT = GameConstants.TOWNHALL_LENGHT;

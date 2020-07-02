@@ -42,3 +42,5 @@ export const FARM_TEXT_Y = FARM_POSITION_Y + FARM_HEIGHT / 2 + 20;
 
 //PERSON CONST
 export const PERSON_COST = 10;
+export const VILLAGER_SIZE = 20;
+export const SOLDIER_SIZE = 40;

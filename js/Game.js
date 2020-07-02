@@ -76,8 +76,8 @@ function render(player) {
       player.color,
       person.position.x,
       person.position.y,
-      20,
-      20,
+      person.size,
+      person.size,
       0,
       0
     );
@@ -95,7 +95,6 @@ function handleButtons(e) {
     } else if (clickedItem === "makeSold") {
       PLAYERS[g_turn].createSoldier();
       refreshNavBar();
-      console.log(PLAYERS[0].registry.length);
     } else if (clickedItem === "end") {
       //this adds 1 to the turn, but since we only use it to access the players in the array, we only need it to be 0/1
       g_turn = (g_turn + 1) % 2;
