@@ -11,6 +11,7 @@ const INITIAL_POPULATION = 5;
 const INITIAL_FOOD = 100;
 const INITIAL_GOLD = 100;
 
+export let g_MAP = [];
 // initializing a list of players
 const PLAYERS = [
   new Player(PLAYER_ONE_COLOR, INITIAL_POPULATION, INITIAL_FOOD, INITIAL_GOLD),
@@ -47,7 +48,7 @@ function turnSetUp() {
   let movesElement = document.querySelector("#moves");
   movesElement.innerHTML = moves;
   render(PLAYERS[g_turn]);
-  render(PLAYERS[g_turn + 1]);
+  render(PLAYERS[(g_turn + 1) % 2]);
 }
 function refreshNavBar() {
   //set population on UI
