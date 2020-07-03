@@ -42,10 +42,10 @@ export default class Player {
         let position = this.findPosition();
         this.registry.push(new Villager(this.registry.length, position));
       } else {
-        alert("Insufficient Food");
+        alert("Insufficient Food. Gather some more food, send a villager to the farm.");
       }
     } else {
-      alert("You have no moves remaining please End Turn");
+      alert("You have no moves remaining. Press End Turn.");
     }
   }
 
@@ -59,14 +59,14 @@ export default class Player {
           let position = this.findPosition();
           this.registry.push(new Soldier(this.registry.length, position));
         } else {
-          alert("Insufficient Gold");
+          alert("Insufficient Gold. Gather some more food, send a villager to the gold mine.");
           return;
         }
       } else {
-        alert("Insufficient Food");
+        alert("Insufficient Food. Gather some more food, send a villager to the farm.");
       }
     } else {
-      alert("You have no moves remaining. Press End Turn");
+      alert("You have no moves remaining. Press End Turn.");
     }
   }
 
