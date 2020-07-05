@@ -13,6 +13,7 @@ const SPAWN_FACTOR_Y = 600;
 const PLAYER_ONE_COLOR = GameConstants.PLAYER_ONE_COLOR;
 
 const PERSON_COST = GameConstants.PERSON_COST;
+const POPULATION_CAP = GameConstants.POPULATION_CAP;
 
 const P2_TH_POS = {
   x: GameConstants.P2_TOWNHALL_POSITION_X,
@@ -25,7 +26,7 @@ export default class Player {
   constructor(color, population, food, gold) {
     this.color = color;
     this.registry = [];
-    for (let i = 0; i < population; i++) {
+    for (let i = 0; i < 64; i++) {
       let position = this.findPosition();
       this.registry.push(new Villager(this.registry.length, position));
     }
@@ -35,38 +36,52 @@ export default class Player {
   }
 
   createVillager() {
-    if (this.movesLeft) {
-      if (this.foodAmount >= PERSON_COST) {
-        this.movesLeft--;
-        this.foodAmount -= PERSON_COST;
-        let position = this.findPosition();
-        this.registry.push(new Villager(this.registry.length, position));
+    if (g_MAP.length <= POPULATION_CAP) {
+      if (this.movesLeft) {
+        if (this.foodAmount >= PERSON_COST) {
+          this.movesLeft--;
+          this.foodAmount -= PERSON_COST;
+          let position = this.findPosition();
+          this.registry.push(new Villager(this.registry.length, position));
+        } else {
+          alert(
+            "Insufficient Food. Gather some more food, send a villager to the farm."
+          );
+        }
       } else {
-        alert("Insufficient Food. Gather some more food, send a villager to the farm.");
+        alert("You have no moves remaining. Press End Turn.");
       }
     } else {
-      alert("You have no moves remaining. Press End Turn.");
+      alert("No more people can be made");
     }
   }
 
   createSoldier() {
-    if (this.movesLeft) {
-      if (this.foodAmount >= PERSON_COST) {
-        if (this.goldAmount >= PERSON_COST) {
-          this.movesLeft--;
-          this.foodAmount -= PERSON_COST;
-          this.goldAmount -= PERSON_COST;
-          let position = this.findPosition();
-          this.registry.push(new Soldier(this.registry.length, position));
+    if (g_MAP.length >= POPULATION_CAP) {
+      if (this.movesLeft) {
+        if (this.foodAmount >= PERSON_COST) {
+          if (this.goldAmount >= PERSON_COST) {
+            this.movesLeft--;
+            this.foodAmount -= PERSON_COST;
+            this.goldAmount -= PERSON_COST;
+            let position = this.findPosition();
+            this.registry.push(new Soldier(this.registry.length, position));
+          } else {
+            alert(
+              "Insufficient Gold. Gather some more food, send a villager to the gold mine."
+            );
+            return;
+          }
         } else {
-          alert("Insufficient Gold. Gather some more food, send a villager to the gold mine.");
-          return;
+          alert(
+            "Insufficient Food. Gather some more food, send a villager to the farm."
+          );
         }
       } else {
-        alert("Insufficient Food. Gather some more food, send a villager to the farm.");
+        alert("You have no moves remaining. Press End Turn.");
       }
     } else {
-      alert("You have no moves remaining. Press End Turn.");
+      alert("No more people can be made")
     }
   }
 
@@ -99,9 +114,7 @@ export default class Player {
       const pos = g_MAP[i];
       if (this.collidesPosition(position, pos)) {
         return true;
-
       }
-      
     }
     return false;
   }
@@ -116,8 +129,6 @@ export default class Player {
   }
 
   collidesXY(x1, x2) {
-    // console.log((x1 + 40 >= x2 && x1 < x2 + 40))
-
     return x1 + 40 >= x2 && x1 < x2 + 40;
   }
 }

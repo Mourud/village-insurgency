@@ -1,4 +1,3 @@
-
 export const INITIAL_POPULATION = 5;
 export const INITIAL_FOOD = 100;
 export const INITIAL_GOLD = 100;
@@ -6,8 +5,9 @@ export const INITIAL_GOLD = 100;
 export const GAMEBOX_HEIGHT = 1000;
 export const GAMEBOX_WIDTH = 2000;
 
-
 export const TOWNHALL_LENGHT = 200;
+
+export const POPULATION_CAP = 130;
 
 //Object colors
 export const PLAYER_ONE_COLOR = "#457b9d";
