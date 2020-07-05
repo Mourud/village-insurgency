@@ -6,7 +6,6 @@ const ctx = canvas.getContext("2d");
 const GAMEBOX_HEIGHT = 1000;
 const GAMEBOX_WIDTH = 2000;
 
-
 const TOWNHALL_LENGHT = 200;
 
 //Object colors

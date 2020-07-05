@@ -1,10 +1,9 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Oswald, Arial, Helvetica, sans-serif;
   color: #f1faee;
-
 }
 
 body {
@@ -14,10 +13,10 @@ body {
   background-position: top;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
 a:hover {
-  color: #1D3557 ;
+  color: #1d3557;
 }

@@ -81,7 +81,7 @@ export default class Player {
         alert("You have no moves remaining. Press End Turn.");
       }
     } else {
-      alert("No more people can be made")
+      alert("No more people can be made");
     }
   }
 

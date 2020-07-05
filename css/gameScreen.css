@@ -30,10 +30,9 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.navbar .info{
+.navbar .info {
   display: flex;
-  align-items: center; 
-
+  align-items: center;
 }
 
 .info span {
@@ -47,7 +46,7 @@
   justify-self: end;
 }
 
-.icons li{
+.icons li {
   display: inline;
   margin-left: 5px;
 }
@@ -76,7 +75,7 @@
   background: #f1faee;
 }
 
-canvas{
+canvas {
   height: 78vh;
   width: 100vw;
   background-color: #f1faee;
@@ -89,7 +88,7 @@ canvas{
   justify-content: center;
   align-items: center;
   display: grid;
-  grid-template-columns: 2fr 1fr .025fr;
+  grid-template-columns: 2fr 1fr 0.025fr;
 }
 
 .button {
@@ -99,7 +98,6 @@ canvas{
   padding-right: 5vw;
   background: #ea8c55;
   border: 2px solid #d17c4b;
-
 }
 
 button.button:hover {
@@ -109,7 +107,6 @@ button.button:hover {
 .buttonControls {
   flex-grow: 1;
   display: flex;
-
 }
 
 .infobox {
