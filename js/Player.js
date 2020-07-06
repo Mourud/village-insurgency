@@ -57,7 +57,7 @@ export default class Player {
   }
 
   createSoldier() {
-    if (g_MAP.length >= POPULATION_CAP) {
+    if (g_MAP.length <= POPULATION_CAP) {
       if (this.movesLeft) {
         if (this.foodAmount >= PERSON_COST) {
           if (this.goldAmount >= PERSON_COST) {
