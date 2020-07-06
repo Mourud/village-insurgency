@@ -7,7 +7,6 @@ const SOLDIER_SIZE = GameConstants.SOLDIER_SIZE;
 */
 export default class Soldier extends Person {
   constructor(id, position) {
-    super(id, position);
-    this.size = SOLDIER_SIZE;
+    super(id, position, SOLDIER_SIZE);
   }
 }

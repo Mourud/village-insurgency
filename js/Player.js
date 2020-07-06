@@ -57,7 +57,7 @@ export default class Player {
   }
 
   createSoldier() {
-    if (g_MAP.length >= POPULATION_CAP) {
+    if (g_MAP.length <= POPULATION_CAP) {
       if (this.movesLeft) {
         if (this.foodAmount >= PERSON_COST) {
           if (this.goldAmount >= PERSON_COST) {
@@ -94,6 +94,14 @@ export default class Player {
 
     g_MAP.push(position);
     return position;
+  }
+
+  findPerson(mouseCoord) {
+    for (let i = 0; i < this.registry.length; i++) {
+      if (this.registry[i].findPerson(mouseCoord)) {
+        return this.registry[i];
+      }
+    }
   }
 
   randomPositionGenerator() {

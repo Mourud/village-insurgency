@@ -7,7 +7,6 @@ const VILLAGER_SIZE = GameConstants.VILLAGER_SIZE;
 */
 export default class Villager extends Person {
   constructor(id, position) {
-    super(id, position);
-    this.size = VILLAGER_SIZE;
+    super(id, position, VILLAGER_SIZE);
   }
 }
