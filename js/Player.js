@@ -26,7 +26,7 @@ export default class Player {
   constructor(color, population, food, gold) {
     this.color = color;
     this.registry = [];
-    for (let i = 0; i < 64; i++) {
+    for (let i = 0; i < population; i++) {
       let position = this.findPosition();
       this.registry.push(new Villager(this.registry.length, position));
     }
