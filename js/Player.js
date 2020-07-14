@@ -7,8 +7,8 @@ const GAME_WIDTH = GameConstants.GAMEBOX_WIDTH;
 const GAME_HEIGHT = GameConstants.GAMEBOX_HEIGHT;
 
 const TH_LENGHT = GameConstants.TOWNHALL_LENGHT;
-const SPAWN_FACTOR_X = 600;
-const SPAWN_FACTOR_Y = 600;
+const SPAWN_FACTOR_X = GameConstants.SPAWN_FACTOR_X;
+const SPAWN_FACTOR_Y = GameConstants.SPAWN_FACTOR_Y;
 
 const PLAYER_ONE_COLOR = GameConstants.PLAYER_ONE_COLOR;
 

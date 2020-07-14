@@ -2,7 +2,6 @@ import Player from "./Player.js";
 import * as GameConstants from "./GameConstants.js";
 import { drawObject } from "./canvas.js";
 
-//TODO: CAP POPULATION
 /*
   This file is the entry point of the game and it handles all global Game related tasks
 */
