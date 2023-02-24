@@ -69,6 +69,7 @@ function refreshNavBar() {
   let movesElement = document.querySelector("#moves");
   movesElement.innerHTML = moves;
   render(PLAYERS[g_turn]);
+  
 }
 
 function render(player) {
@@ -105,5 +106,44 @@ function handleButtons(e) {
   }
   e.stopPropagation;
 }
+let selectedPerson = null;
+// add mouse event listener to the canvas
+let canvas = document.querySelector("#canvas");
+canvas.addEventListener("click", handleClick, false);
+let gameBox = document.querySelector(".gamebox");
+
+function handleClick(e) {
+  const rect = gameBox.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+  const x = (e.clientX - rect.left) * scaleX;
+  const y = (e.clientY - rect.top) * scaleY;
+  let oldPosition = null;
+  if(selectedPerson){ // Person is already selected
+    // TODO: Code for selected person
+    // TODO: Deal with the old position
+    // TODO: Deal with the case where the person is moved to an occupied position
+    // TODO: Deal with the case where the person is moved to an unoccupied position
+
+
+    oldPosition = selectedPerson.position; // save the old position {CHANGE needed}
+    // selectedPerson.setPosition(x, y);
+    drawObject("", "white", oldPosition.x, oldPosition.y, selectedPerson.size, selectedPerson.size, 0, 0) // clear the old position {CHANGE needed}
+    selectedPerson = null; 
+    refreshNavBar(); // refresh the nav bar {CHANGE to a general render function}
+  }else{ // Person is not selected
+  // find if a person is clicked
+  selectedPerson = PLAYERS[g_turn].registry.find((person) => {
+    return (
+      x >= person.position.x &&
+      x <= person.position.x + person.size &&
+      y >= person.position.y &&
+      y <= person.position.y + person.size
+    );
+  });
+}
+
+}
 
 turnSetUp();
+
