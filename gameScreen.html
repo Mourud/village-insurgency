@@ -1,48 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/gameScreen.css">
+  <title>Village Insurgency | Play</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="info">
+      <span id="turn-player-color">TURN</span>
+      <span>Population: <span id="pop">0</span></span>
+      <span>Food: <span id="food">0</span></span>
+      <span>Gold: <span id="gold">0</span></span>
+      <span>Moves Left: <span id="moves">0</span></span>
+    </div>
+    <div class="icons">
+      <ul>
+        <li></a><img src="assets/icons/save.svg" alt="Save"></li>
+        <li><img src="assets/icons/load.svg" alt="Load"></li>
+        <li><a href="index.html"><img src="assets/icons/exit.svg" alt="Close"></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="gamebox">
+    <canvas id="canvas">
+    </canvas>
+  </div>
+  <div class="controlbox">
+    <div class="infobox"></div>
+    <div class="buttonControls">
+      <button class="button" id="makeVil">Make Villager</button>
+      <button class="button" id="makeSold">Make Soldier</button>
+      <button class="button" id="end">End Turn</button>
+      </ul>
+    </div>
+  </div>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+    import {getDatabase, ref, set, get, update, remove, onValue, child} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCBbVjGrHMebj0Myiv_MWJ9qQyyOjUVE6E",
+      authDomain: "village-insurgency.firebaseapp.com",
+      databaseURL: "https://village-insurgency-default-rtdb.firebaseio.com",
+      projectId: "village-insurgency",
+      storageBucket: "village-insurgency.appspot.com",
+      messagingSenderId: "696309742003",
+      appId: "1:696309742003:web:cd0d8511a71d547350f3c6",
+      measurementId: "G-QJQ90Q992B"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  <script src="js/app.js"></script>
   <script type="module" src="js/Game.js"></script>
   <script type="module" src="js/Player.js"></script>
   <script type="module" src="js/Person.js"></script>
   <script type="module" src="js/Villager.js"></script>
   <script type="module" src="js/Soldier.js"></script>
   <script type="module" src="js/canvas.js"></script>
-  <title>Village Insurgency | Play</title>
-</head>
-
-
-<body>
-      <div class="navbar">
-        <div class="info">
-        <span id="turn-player-color">TURN</span>
-        <span >Population: <span id="pop">0</span></span>
-        <span >Food: <span id="food">0</span></span>
-        <span >Gold: <span id="gold">0</span></span>
-        <span >Moves Left: <span id="moves">0</span></span>
-        </div>
-        <div class="icons">
-          <ul>
-            <li></a><img src="assets/icons/save.svg" alt="Save"></li>
-            <li><img src="assets/icons/load.svg" alt="Load"></li>
-            <li><a href="index.html"><img src="assets/icons/exit.svg" alt="Close"></a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="gamebox">
-        <canvas id="canvas">
-        </canvas>
-      </div>
-      <div class="controlbox">
-        <div class="infobox"></div>
-        <div class="buttonControls">
-          <button class="button" id="makeVil">Make Villager</button>
-          <button class="button" id="makeSold">Make Soldier</button>
-          <button class="button" id="end">End Turn</button>
-          </ul>
-        </div>
-      </div>
 </body>
+
 </html>
