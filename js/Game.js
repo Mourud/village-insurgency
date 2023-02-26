@@ -1,9 +1,6 @@
 import Player from "./Player.js";
 import * as GameConstants from "./GameConstants.js";
 import { drawObject } from "./canvas.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-import {getDatabase, ref, set, get, update, remove, onValue, child} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
-
 /*
   This file is the entry point of the game and it handles all global Game related tasks
 */
@@ -159,7 +156,7 @@ turnSetUp();
       // User is signed in.
       console.log(user.uid);
       playerId = user.uid;
-      playerRef = firebase.database().ref('players/${playerId}')
+      playerRef = firebase.database().ref(`players/${playerId}`)
 
       playerRef.set({
         name: 'Anonymous',
@@ -172,8 +169,6 @@ turnSetUp();
       // User is signed out.
     }
   });
-
-  let firebase = {auth : getAuth};
   firebase.auth().signInAnonymously().catch((error) => {
     console.log(error.code);
     console.log(error.message);

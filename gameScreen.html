@@ -7,7 +7,12 @@
   <link rel="stylesheet" href="css/gameScreen.css">
   <title>Village Insurgency | Play</title>
 </head>
-
+<script type="module" src="js/Game.js"></script>
+<script type="module" src="js/Player.js"></script>
+<script type="module" src="js/Person.js"></script>
+<script type="module" src="js/Villager.js"></script>
+<script type="module" src="js/Soldier.js"></script>
+<script type="module" src="js/canvas.js"></script>
 <body>
   <div class="navbar">
     <div class="info">
@@ -38,17 +43,11 @@
       </ul>
     </div>
   </div>
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
-    import { getAuth } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-    import {getDatabase, ref, set, get, update, remove, onValue, child} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script>
+    // NOTE - INCLUDE YOUR FIREBASE CONFIG HERE FOR ANYTHING TO WORK:
     const firebaseConfig = {
       apiKey: "AIzaSyCBbVjGrHMebj0Myiv_MWJ9qQyyOjUVE6E",
       authDomain: "village-insurgency.firebaseapp.com",
@@ -59,18 +58,8 @@
       appId: "1:696309742003:web:cd0d8511a71d547350f3c6",
       measurementId: "G-QJQ90Q992B"
     };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+    firebase.initializeApp(firebaseConfig);
   </script>
-  <script src="js/app.js"></script>
-  <script type="module" src="js/Game.js"></script>
-  <script type="module" src="js/Player.js"></script>
-  <script type="module" src="js/Person.js"></script>
-  <script type="module" src="js/Villager.js"></script>
-  <script type="module" src="js/Soldier.js"></script>
-  <script type="module" src="js/canvas.js"></script>
 </body>
 
 </html>
