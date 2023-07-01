@@ -101,6 +101,3 @@ farm2.onload = () => {
 }
 
 
-ctx.fillStyle = '#37946e';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-
