@@ -59,10 +59,10 @@ canvas.addEventListener("click", (e) => {
   const y = (e.clientY - rect.top) * scaleY;
   if (bHouse.width > x && bHouse.height > y) {
     if (unclicked){
-    bHouse.src = 'assets/sprites/updated/Blue House on Hover.png';
+    bHouse.src = 'assets/sprites/updated/BlueHouseOnClick.png';
     unclicked = false;
     }else{
-      bHouse.src = 'assets/sprites/updated/Blue House.png';
+      bHouse.src = 'assets/sprites/updated/BlueHouse.png';
       unclicked = true;
     }
   }
@@ -73,7 +73,7 @@ background.onload = () =>{
   ctx.drawImage(background, 0, 0);
 }
 const bHouse = new Image();
-bHouse.src = 'assets/sprites/updated/Blue House.png';
+bHouse.src = 'assets/sprites/updated/BlueHouse.png';
 bHouse.onload = () =>{
   ctx.drawImage(bHouse, 0, 0)
 };
@@ -84,7 +84,7 @@ bHouse.addEventListener('click', () => {
 
 
 const rHouse = new Image();
-rHouse.src = 'assets/sprites/updated/Red House.png';
+rHouse.src = 'assets/sprites/updated/RedHouse.png';
 rHouse.onload = () =>{
   ctx.drawImage(rHouse, 1664,0)
 };
