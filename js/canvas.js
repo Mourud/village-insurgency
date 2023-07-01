@@ -63,9 +63,15 @@ canvas.addEventListener("click", (e) => {
     unclicked = false;
     }else{
       bHouse.src = 'assets/sprites/updated/Blue House.png';
+      unclicked = true;
     }
   }
 })
+const background = new Image();
+background.src = 'assets/sprites/Backgroud.png';
+background.onload = () =>{
+  ctx.drawImage(background, 0, 0);
+}
 const bHouse = new Image();
 bHouse.src = 'assets/sprites/updated/Blue House.png';
 bHouse.onload = () =>{
@@ -76,23 +82,23 @@ bHouse.addEventListener('click', () => {
   alert('clicked')
 })
 
+
 const rHouse = new Image();
 rHouse.src = 'assets/sprites/updated/Red House.png';
 rHouse.onload = () =>{
-  ctx.drawImage(rHouse, 1712,0)
+  ctx.drawImage(rHouse, 1664,0)
 };
 
-const lake = new Image();
-lake.src = 'assets/sprites/updated/Lake.png';
-lake.onload = () =>{
-  ctx.drawImage(lake, 900, 0);
-};
-
-const empty_farm = new Image();
-empty_farm.src = 'assets/sprites/updated/farm empty.png';
-empty_farm.onload = () =>{
-  ctx.drawImage(empty_farm, 0, 735);
-};
+const farm1 = new Image();
+farm1.src = 'assets/sprites/Farm1.png';
+farm1.onload = () => {
+  ctx.drawImage(farm1, 0,0)
+}
+const farm2 = new Image();
+farm2.src = 'assets/sprites/Farm2.png';
+farm2.onload = () => {
+  ctx.drawImage(farm2, 0,0)
+}
 
 
 ctx.fillStyle = '#37946e';
