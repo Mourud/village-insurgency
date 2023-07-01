@@ -100,8 +100,19 @@ function handleButtons(e) {
       refreshNavBar();
     } else if (clickedItem === "end") {
       //this adds 1 to the turn, but since we only use it to access the players in the array, we only need it to be 0/1
-      g_turn = (g_turn + 1) % 2;
-      turnSetUp();
+      fetch('https://us-central1-village-insurgency.cloudfunctions.net/incrementTurn',{
+        method: 'GET',
+      }).then(response => response.json())
+        .then(data => {
+          console.log(typeof data);
+          console.log(data);
+          g_turn = data.currentTurn;
+          console.log("turn: ");
+          console.log(g_turn);
+        }).then(() => {turnSetUp()})
+        .catch((error) => {
+          console.error('Error:', error);
+        });
     }
   }
   e.stopPropagation;

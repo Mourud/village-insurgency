@@ -1,0 +1,16 @@
+{
+  "Game": {
+    "Map": {
+      "Farm": 5000,
+      "Gold mine": 5000,
+      "Registry": "            {                 \"isSoldier\": false,                 \"posX\": 742,                 \"posY\": 121,                 \"nearResource\": false,                 \"Health\": 50,                 \"attack\": 1,                 \"gatherRate\": 5,                 \"curMaxHealth\": 50,                 \"id\": 1             },             {                 \"isSoldier\": false,                 \"posX\": 745,                 \"posY\": 49,                 \"nearResource\": false,                 \"Health\": 50,                 \"attack\": 1,                 \"gatherRate\": 5,                 \"curMaxHealth\": 50,                 \"id\": 2             },             {                 \"isSoldier\": false,                 \"posX\": 776,                 \"posY\": 92,                 \"nearResource\": false,                 \"Health\": 50,                 \"attack\": 1,                 \"gatherRate\": 5,                 \"curMaxHealth\": 50,                 \"id\": 3             }         ],         \"amountGold\": 10,         \"personID\": 3,         \"amountFood\": 10     },     \"goldMine\": {         \"resourceRemaining\": 100     },     \"isPlayerTurn\": true,     \"playerTown\": {         \"isPlayer\": true,         \"registry\": [             {                 \"isSoldier\": false,                 \"posX\": 171,                 \"posY\": 385,                 \"nearResource\": false,                 \"Health\": 50,                 \"attack\": 1,                 \"gatherRate\": 5,                 \"curMaxHealth\": 50,                 \"id\": 1             },             {                 \"isSoldier\": false,                 \"posX\": 216,                 \"posY\": 408,                 \"nearResource\": false,                 \"Health\": 50,                 \"attack\": 1,                 \"gatherRate\": 5,                 \"curMaxHealth\": 50,                 \"id\": 2             },             {                 \"isSoldier\": false,                 \"posX\": 274,                 \"posY\": 443,                 \"nearResource\": false,                 \"Health\": 50,                 \"attack\": 1,                 \"gatherRate\": 5,                 \"curMaxHealth\": 50,                 \"id\": 3             }         ",
+      "TownHall-red": "",
+      "Townhall-blue": ""
+    },
+    "Players": {
+      "P1": "",
+      "P2": ""
+    },
+    "Turn": 0
+  }
+}

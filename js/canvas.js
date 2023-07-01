@@ -3,8 +3,8 @@ import * as GameConstants from "./GameConstants.js";
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
-const GAMEBOX_HEIGHT = 1000;
-const GAMEBOX_WIDTH = 2000;
+const GAMEBOX_HEIGHT = 1024;
+const GAMEBOX_WIDTH = 2048;
 
 const TOWNHALL_LENGHT = 200;
 
@@ -48,47 +48,53 @@ export function drawObject(name, color, x, y, width, height, text_x, text_y) {
   ctx.font = "1.5em Arial";
   ctx.fillText(name, text_x, text_y);
 }
-//TOWNHALL 1
-drawObject(
-  "TOWN HALL",
-  PLAYER_ONE_COLOR,
-  P1_TOWNHALL_POSITION_X,
-  P1_TOWNHALL_POSITION_Y,
-  TOWNHALL_LENGHT,
-  TOWNHALL_LENGHT,
-  P1_TEXT_X,
-  P1_TEXT_Y
-);
-//TOWNHALL 2
-drawObject(
-  "TOWN HALL",
-  PLAYER_TWO_COLOR,
-  P2_TOWNHALL_POSITION_X,
-  P2_TOWNHALL_POSITION_Y,
-  TOWNHALL_LENGHT,
-  TOWNHALL_LENGHT,
-  P2_TOWNHALL_TEXT_X,
-  P2_TOWNHALL_TEXT_Y
-);
-//GOLD MINE
-drawObject(
-  "GOLD MINE",
-  GOLD_MINE_COLOR,
-  GOLDMINE_POSITION_X,
-  GOLDMINE_POSITION_Y,
-  GOLDMINE_WIDTH,
-  GOLDMINE_HEIGHT,
-  GOLDMINE_TEXT_X,
-  GOLDMINE_TEXT_Y
-);
-//FARM
-drawObject(
-  "FARM",
-  FARM_COLOR,
-  FARM_POSITION_X,
-  FARM_POSITION_Y,
-  FARM_WIDTH,
-  FARM_HEIGHT,
-  FARM_TEXT_X,
-  FARM_TEXT_Y
-);
+
+var unclicked = true;
+canvas.addEventListener("click", (e) => {
+  
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+  const x = (e.clientX - rect.left) * scaleX;
+  const y = (e.clientY - rect.top) * scaleY;
+  if (bHouse.width > x && bHouse.height > y) {
+    if (unclicked){
+    bHouse.src = 'assets/sprites/updated/Blue House on Hover.png';
+    unclicked = false;
+    }else{
+      bHouse.src = 'assets/sprites/updated/Blue House.png';
+    }
+  }
+})
+const bHouse = new Image();
+bHouse.src = 'assets/sprites/updated/Blue House.png';
+bHouse.onload = () =>{
+  ctx.drawImage(bHouse, 0, 0)
+};
+bHouse.addEventListener('click', () => {
+  
+  alert('clicked')
+})
+
+const rHouse = new Image();
+rHouse.src = 'assets/sprites/updated/Red House.png';
+rHouse.onload = () =>{
+  ctx.drawImage(rHouse, 1712,0)
+};
+
+const lake = new Image();
+lake.src = 'assets/sprites/updated/Lake.png';
+lake.onload = () =>{
+  ctx.drawImage(lake, 900, 0);
+};
+
+const empty_farm = new Image();
+empty_farm.src = 'assets/sprites/updated/farm empty.png';
+empty_farm.onload = () =>{
+  ctx.drawImage(empty_farm, 0, 735);
+};
+
+
+ctx.fillStyle = '#37946e';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
