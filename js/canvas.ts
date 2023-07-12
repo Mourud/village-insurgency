@@ -48,58 +48,100 @@ export function drawObject(name, color, x, y, width, height, text_x, text_y) {
   ctx.font = "1.5em Arial";
   ctx.fillText(name, text_x, text_y);
 }
-
-var unclicked = true;
 canvas.addEventListener("click", (e) => {
-  
+
   const rect = canvas.getBoundingClientRect();
   const scaleX = canvas.width / rect.width;
   const scaleY = canvas.height / rect.height;
   const x = (e.clientX - rect.left) * scaleX;
   const y = (e.clientY - rect.top) * scaleY;
   if (bHouse.width > x && bHouse.height > y) {
-    if (unclicked){
-    bHouse.src = 'assets/sprites/updated/BlueHouseOnClick.png';
-    unclicked = false;
-    }else{
+    if (unclicked) {
+      bHouse.src = 'assets/sprites/updated/BlueHouseOnClick.png';
+      unclicked = false;
+    } else {
       bHouse.src = 'assets/sprites/updated/BlueHouse.png';
       unclicked = true;
     }
   }
 })
 const background = new Image();
-background.src = 'assets/sprites/Backgroud.png';
-background.onload = () =>{
-  ctx.drawImage(background, 0, 0);
+    background.onload = () => {
+      ctx.drawImage(background, 0, 0);
+    }
+    background.src = 'assets/sprites/Backgroud.png';
+    const bHouse = new Image();
+    bHouse.onload = () => {
+      ctx.drawImage(bHouse, 0, 0)
+    };
+    bHouse.src = 'assets/sprites/updated/BlueHouse.png';
+    bHouse.addEventListener('click', () => {
+
+      alert('clicked')
+    })
+
+
+    const rHouse = new Image();
+    rHouse.onload = () => {
+      ctx.drawImage(rHouse, 1664, 0)
+    };
+    rHouse.src = 'assets/sprites/updated/RedHouse.png';
+
+    const farm1 = new Image();
+    farm1.onload = () => {
+      ctx.drawImage(farm1, 0, 0)
+    }
+    farm1.src = 'assets/sprites/Farm1.png';
+    const farm2 = new Image();
+    farm2.onload = () => {
+      ctx.drawImage(farm2, 0, 0)
+    }
+    farm2.src = 'assets/sprites/Farm2.png';
+
+function startGameLoop() {
+  const step = () => {
+    // Clear off the canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    var unclicked = true;
+    
+    const background = new Image();
+    background.onload = () => {
+      ctx.drawImage(background, 0, 0);
+    }
+    background.src = 'assets/sprites/Backgroud.png';
+    const bHouse = new Image();
+    bHouse.onload = () => {
+      ctx.drawImage(bHouse, 0, 0)
+    };
+    bHouse.src = 'assets/sprites/updated/BlueHouse.png';
+    bHouse.addEventListener('click', () => {
+
+      alert('clicked')
+    })
+
+
+    const rHouse = new Image();
+    rHouse.onload = () => {
+      ctx.drawImage(rHouse, 1664, 0)
+    };
+    rHouse.src = 'assets/sprites/updated/RedHouse.png';
+
+    const farm1 = new Image();
+    farm1.onload = () => {
+      ctx.drawImage(farm1, 0, 0)
+    }
+    farm1.src = 'assets/sprites/Farm1.png';
+    const farm2 = new Image();
+    farm2.onload = () => {
+      ctx.drawImage(farm2, 0, 0)
+    }
+    farm2.src = 'assets/sprites/Farm2.png';
+    requestAnimationFrame(() => {
+      step();
+    });
+  };
+  step();
 }
-const bHouse = new Image();
-bHouse.src = 'assets/sprites/updated/BlueHouse.png';
-bHouse.onload = () =>{
-  ctx.drawImage(bHouse, 0, 0)
-};
-bHouse.addEventListener('click', () => {
-  
-  alert('clicked')
-})
 
-
-const rHouse = new Image();
-rHouse.src = 'assets/sprites/updated/RedHouse.png';
-rHouse.onload = () =>{
-  ctx.drawImage(rHouse, 1664,0)
-};
-
-const farm1 = new Image();
-farm1.src = 'assets/sprites/Farm1.png';
-farm1.onload = () => {
-  ctx.drawImage(farm1, 0,0)
-}
-const farm2 = new Image();
-farm2.src = 'assets/sprites/Farm2.png';
-farm2.onload = () => {
-  ctx.drawImage(farm2, 0,0)
-}
-
-
-
-
+// startGameLoop();
