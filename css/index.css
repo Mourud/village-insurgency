@@ -3,13 +3,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Oswald, Arial, Helvetica, sans-serif;
-  color: #f1faee;
+  color: #030901;
 }
 
 body {
-  background: url(../assets/images/knight.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background: url(../assets/images/bg.webp); */
+  background-repeat: repeat;
+  background-size: auto;
   background-position: top;
 }
 
